@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>instanceof</title>
+</head>
+<body>
+
+<script src="../../dist/fis.min.js"></script>
+<script>
+  function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+  const auto = new Car('Honda', 'Accord', 1998);
+
+  console.log(fis.newInstanceof(auto,Car)); // true
+  console.log(fis.newInstanceof(auto,Object)); // true
+  console.log(fis.newInstanceof(auto,Array)); // false
+</script>
+</body>
+</html>

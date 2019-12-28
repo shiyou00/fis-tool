@@ -13,15 +13,15 @@ module.exports = {
     library: `fis`,
     globalObject: 'this',
     libraryTarget: "umd",
-    libraryExport: 'default',
+    // libraryExport: 'default',
   },
   module:{
     rules:[
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/,/example/],
         loader: "babel-loader"
-      },
+      }
     ]
   },
   plugins: [
