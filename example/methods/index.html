@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>methods</title>
+</head>
+<body>
+
+<script src="../../dist/fis.min.js"></script>
+<script>
+  (function(){
+    const arr = [1,2,3,4,5,6,7,8,9];
+    const page = 2;
+    const pageSize = 3;
+    console.log(fis.paging(arr,page,pageSize)); // [4,5,6]
+  })();
+
+  (function () {
+    const arr = [
+      {
+        name: "abc",
+        age: 20,
+        address:"测试测试"
+      },
+      {
+        name: "cdef",
+        age: 10,
+        address:"测试测试2"
+      },
+      {
+        name: "kkk",
+        age: 15,
+        address:"测试测试3"
+      }
+    ];
+    console.log(fis.filter(arr,'c',['name']));
+  })();
+</script>
+</body>
+</html>
