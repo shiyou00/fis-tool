@@ -38,6 +38,17 @@
     ];
     console.log(fis.filter(arr,'c',['name']));
   })();
+
+  (function(){
+    const isString = fis.isType('String');
+    const isBoolean = fis.isType('Boolean');
+    const isArray = fis.isType('Array');
+    const isObject = fis.isType('Object');
+    console.log(isString('abc'),isString(123)); // true , false
+    console.log(isBoolean(true),isBoolean("TRUE"));// true , false
+    console.log(isArray([]),isArray("arr"));// true , false
+    console.log(isObject({}),isArray("object"));// true , false
+  })();
 </script>
 </body>
 </html>
