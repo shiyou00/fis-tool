@@ -49,6 +49,14 @@
     console.log(isArray([]),isArray("arr"));// true , false
     console.log(isObject({}),isArray("object"));// true , false
   })();
+  
+  (function () {
+    const observe =  new fis.Observe();
+    observe.subscribe(function (price) {
+      console.log(price);
+    });
+    observe.publish("3000元");
+  })();
 </script>
 </body>
 </html>

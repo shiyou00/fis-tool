@@ -6,11 +6,14 @@
   "scripts": {
     "build": "webpack"
   },
-  "keywords": ["tool"],
+  "keywords": [
+    "tool"
+  ],
   "author": "frankshi",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.7",
     "babel-loader": "^8.0.6",
