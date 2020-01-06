@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/fis.min.js",
   "scripts": {
-    "build": "webpack"
+    "build": "node export-catalog.js && webpack"
   },
   "keywords": [
     "tool"
