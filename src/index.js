@@ -1,4 +1,5 @@
 export * from "./apply";
+export * from "./bind";
 export * from "./call";
 export * from "./filter";
 export * from "./instanceof";

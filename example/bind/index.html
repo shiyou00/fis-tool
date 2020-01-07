@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bind</title>
+</head>
+<body>
+
+<script src="../../dist/fis.min.js"></script>
+<script>
+  const foo = {
+    a:100
+  };
+
+  const bar = function(name,age){
+    console.log(this.a,name,age);
+  };
+
+  const newBar = bar.customBind(foo,"jack");
+  newBar(18);
+</script>
+</body>
+</html>
