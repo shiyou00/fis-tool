@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clone</title>
+</head>
+<body>
+
+<script src="../../dist/fis.min.js"></script>
+<script>
+  (function () {
+    const target = {
+      a:1,
+      b:{
+        c:1
+      }
+    };
+    const cloneObj = fis.clone1(target);
+    target.b.c = 2;
+    console.log(target,cloneObj);
+  })();
+
+  (function(){
+    const target = {
+      field1: 1,
+      field2: undefined,
+      field3: 'ConardLi',
+      field4: {
+        child: 'child',
+        child2: {
+          child2: 'child2'
+        }
+      }
+    };
+    const cloneObj = fis.clone2(target);
+    console.log(cloneObj);
+  })();
+
+  (function () {
+    const target = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child'
+      },
+      field4: [2, 4, 8]
+    };
+    const cloneObj = fis.clone3(target);
+    console.log(cloneObj);
+  })();
+  
+  (function () {
+    const target = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child'
+      },
+      field4: [2, 4, 8]
+    };
+    target.target = target;
+    const cloneObj = fis.clone4(target);
+    console.log(cloneObj);
+  })();
+
+  (function () {
+    const target = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child'
+      },
+      field4: [2, 4, 8],
+      f: { f: { f: { f: { f: { f: { f: { f: { f: { f: { f: { f: {} } } } } } } } } } } },
+    };
+
+    target.target = target;
+
+    console.time();
+    const result = fis.clone5(target);
+    console.timeEnd();
+
+    console.time();
+    const result2 = fis.clone6(target);
+    console.timeEnd();
+  })();
+
+  (function(){
+    const map = new Map();
+    map.set("1",1);
+    const set = new Set();
+    set.add(1);
+
+    const target = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child'
+      },
+      field4: [2, 4, 8],
+      empty: null,
+      map,
+      set,
+    };
+    target.target = target;
+    const cloneObj = fis.clone8(target);
+    console.log(cloneObj);
+  })();
+
+  (function(){
+    const map = new Map();
+    map.set('key', 'value');
+    map.set('frank', 'shi');
+
+    const set = new Set();
+    set.add('abc');
+    set.add('def');
+
+    const target = {
+      field1: 1,
+      field2: undefined,
+      field3: {
+        child: 'child'
+      },
+      field4: [2, 4, 8],
+      empty: null,
+      map,
+      set,
+      bool: new Boolean(true),
+      num: new Number(2),
+      str: new String(2),
+      symbol: Object(Symbol(1)),
+      date: new Date(),
+      reg: /\d+/,
+      error: new Error(),
+      func1: () => {
+        console.log('frank shi');
+      },
+      func2: function (a, b) {
+        return a + b;
+      }
+    };
+    target.target = target;
+    const cloneObj = fis.clone(target);
+    console.log(cloneObj);
+  })();
+</script>
+</body>
+</html>
